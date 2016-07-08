@@ -1,0 +1,17 @@
+# Created database
+create database pocdb comment 'database for spark poc';
+
+# Used the same database to create further tables
+use pocdb;
+
+# Created external table# 1
+create external table CustomerComplaintTable1 (month int, year int, complaint_type string, company string, num_of_complaints int) comment 'this table contains number of complaints logged against a company in a particular month and year' row format delimited fields terminated by ',' location '/home/edureka/POC/Hive/CustomerComplaintTable1';
+
+# Created external table# 2
+create external table CustomerComplaintTable2 (month int, year int, complaint_type string, company string, num_of_complaints int, number_of_closed_complaints int) comment 'this table contains number of complaints logged against a company in a particular month and year and how many of them got closed' row format delimited fields terminated by ',' location '/home/edureka/POC/Hive/CustomerComplaintTable2';
+
+# Created external table# 3
+create external table CustomerComplaintTable3 (month int, year int, complaint_type string, company string, num_of_complaints int, number_of_concented_complaints int) comment 'this table contains number of complaints logged against a company in a particular month and year and how many of them got closed with concents' row format delimited fields terminated by ',' location '/home/edureka/POC/Hive/CustomerComplaintTable3';
+
+# Created external table# 4
+create external table CustomerComplaintTable4 (month int, year int, complaint_type string, company string, tot_num_of_complaints int) comment 'this table contains total number of complaints logged against a category in a particular month and year' row format delimited fields terminated by ',' location '/home/edureka/POC/Hive/CustomerComplaintTable4';
